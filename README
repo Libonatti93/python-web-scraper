@@ -1,0 +1,17 @@
+Scraper for the technology section of the BBC website. Make sure you have the following libraries installed:
+Code Explanation:
+Function fetch_page_content(url):
+
+Makes an HTTP request to the given URL and returns the HTML content of the page.
+Uses raise_for_status() to ensure that any HTTP errors are handled.
+Function parse_articles(html_content):
+
+Receives the HTML of the page and uses BeautifulSoup to extract data from the articles.
+Finds articles by their specific tags and classes (<div class="gs-c-promo">), adjustable according to the structure of the page.
+For each article, extracts the title (<h3>), the link (<a> with href), and the summary (<p>).
+Function save_to_csv(data, filename):
+
+Saves the extracted data to a CSV file using pandas, making it easier to use in later analysis.
+Function main():
+
+Coordinates the program flow: fetches the page content, parses the articles, and saves the data.
